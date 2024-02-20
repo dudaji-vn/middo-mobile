@@ -3,7 +3,6 @@
     "name": "middo-mobile",
     "slug": "middo-mobile",
     "version": "1.0.0",
-
     "scheme": "middo-mobile",
     "web": {
       "bundler": "metro",
@@ -13,10 +12,8 @@
     "plugins": ["expo-router"],
     "experiments": {
       "typedRoutes": true,
-
       "tsconfigPaths": true
     },
-
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -27,12 +24,23 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dudajivn.middo"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.dudajivn.middo",
+      "googleServicesFile": "./google-services.json"
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "4e631535-fe77-4b57-8f97-d3df43bca863"
       }
     }
   }

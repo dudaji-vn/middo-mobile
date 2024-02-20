@@ -14,6 +14,7 @@ export const SafeAreaLayout = forwardRef<View, ViewProps>((props, ref) => {
         paddingBottom: insets.bottom,
         paddingLeft: insets.left,
         paddingRight: insets.right,
+        backgroundColor: 'white',
       }}
     />
   );

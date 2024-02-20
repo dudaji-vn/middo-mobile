@@ -1,6 +1,8 @@
+import { Button, Text } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 import { SafeAreaLayout } from '~/components';
+import NotificationManualButton from '~/components/notification-manual-button';
 import { MIDDO_WEB_URL } from '~/configs/env.config';
 
 export default function WebviewScreen() {
@@ -13,6 +15,7 @@ export default function WebviewScreen() {
         source={{ uri: MIDDO_WEB_URL }}
         style={{ paddingTop: 20 }}
       />
+      <NotificationManualButton />
     </SafeAreaLayout>
   );
 }
