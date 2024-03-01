@@ -1,21 +1,34 @@
-import { Button, Text } from 'react-native';
+import React from 'react';
+import { Platform } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 import { SafeAreaLayout } from '~/components';
-import NotificationManualButton from '~/components/notification-manual-button';
 import { MIDDO_WEB_URL } from '~/configs/env.config';
+import { useWebviewGesture, useWebviewNotificationNavigation, useWebviewTokens } from '~/hooks';
 
 export default function WebviewScreen() {
+  const webviewRef = React.useRef<WebView>(null);
+
+  const { onMessage, onNavigationStateChange } = useWebviewTokens(webviewRef);
+
+  useWebviewGesture(webviewRef);
+  useWebviewNotificationNavigation(webviewRef);
+
   return (
     <SafeAreaLayout>
       <WebView
-        className="flex-1 pt-20"
-        userAgent="Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko"
-        originWhitelist={['https://*', 'http://*', 'file://*', 'sms://*']}
+        ref={webviewRef}
+        className="flex-1"
+        allowsBackForwardNavigationGestures
+        onMessage={onMessage}
+        onNavigationStateChange={onNavigationStateChange}
+        userAgent={
+          Platform.OS === 'android'
+            ? 'Chrome/18.0.1025.133 Mobile Safari/535.19'
+            : 'AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75'
+        }
         source={{ uri: MIDDO_WEB_URL }}
-        style={{ paddingTop: 20 }}
       />
-      <NotificationManualButton />
     </SafeAreaLayout>
   );
 }
