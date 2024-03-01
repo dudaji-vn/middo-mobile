@@ -2,16 +2,17 @@ import '../global.css';
 
 import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+import { Providers } from '~/providers';
 
 export default function RootLayout() {
   return (
-    <SafeAreaProvider>
+    <Providers>
       <GestureHandlerRootView style={{ flex: 1 }}>
         <Stack screenOptions={{}}>
           <Stack.Screen name="index" options={{ headerShown: false }} />
         </Stack>
       </GestureHandlerRootView>
-    </SafeAreaProvider>
+    </Providers>
   );
 }

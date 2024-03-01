@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "835558552712",
+    "project_id": "middo-translate",
+    "storage_bucket": "middo-translate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835558552712:android:64d30ab203d450c5e41b3d",
+        "android_client_info": {
+          "package_name": "com.dudajivn.middo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835558552712-biu37hj004j0b6be5blgf0odc6justol.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB837AJq2sheCItijTpifsBuCbopxtK-1Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835558552712-biu37hj004j0b6be5blgf0odc6justol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
