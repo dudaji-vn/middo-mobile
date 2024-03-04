@@ -80,13 +80,6 @@ export const usePushNotifications = (): PushNotificationState => {
   };
 
   useEffect(() => {
-    if (!isLogged) {
-      if (notificationListener.current && responseListener.current) {
-        Notifications.removeNotificationSubscription(notificationListener.current!);
-        Notifications.removeNotificationSubscription(responseListener.current!);
-      }
-      return;
-    }
     registerForPushNotificationsAsync().then(async (token) => {
       setExpoPushToken(token);
       await handleSubscription(token?.data);
@@ -94,24 +87,24 @@ export const usePushNotifications = (): PushNotificationState => {
     });
 
     notificationListener.current = Notifications.addNotificationReceivedListener((notification) => {
-      const url = notification.request.content.data?.url;
-      if (url.includes(currentRoomId)) {
-        Notifications.setNotificationHandler({
-          handleNotification: async () => ({
-            shouldPlaySound: false,
-            shouldShowAlert: false,
-            shouldSetBadge: false,
-          }),
-        });
-      } else {
-        Notifications.setNotificationHandler({
-          handleNotification: async () => ({
-            shouldPlaySound: true,
-            shouldShowAlert: true,
-            shouldSetBadge: true,
-          }),
-        });
-      }
+      // const url = notification.request.content.data?.url;
+      // if (url.includes(currentRoomId)) {
+      //   Notifications.setNotificationHandler({
+      //     handleNotification: async () => ({
+      //       shouldPlaySound: false,
+      //       shouldShowAlert: false,
+      //       shouldSetBadge: false,
+      //     }),
+      //   });
+      // } else {
+      //   Notifications.setNotificationHandler({
+      //     handleNotification: async () => ({
+      //       shouldPlaySound: true,
+      //       shouldShowAlert: true,
+      //       shouldSetBadge: true,
+      //     }),
+      //   });
+      // }
     });
 
     responseListener.current = Notifications.addNotificationResponseReceivedListener((response) => {

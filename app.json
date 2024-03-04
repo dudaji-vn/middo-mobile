@@ -20,7 +20,9 @@
       [
         "expo-notifications",
         {
-          "sounds": ["./assets/newmessagenotify.mp3"]
+          "sounds": [
+            "./assets/newmessagenotify.mp3"
+          ]
         }
       ]
     ],
@@ -36,7 +38,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.dudajivn.middo",
@@ -61,7 +65,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "4e631535-fe77-4b57-8f97-d3df43bca863"
+        "projectId": "9c4fda59-5452-4290-ad1a-17b21b2548b0"
       }
     }
   }
