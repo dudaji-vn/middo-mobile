@@ -48,9 +48,7 @@
         "NSCameraUsageDescription": "This app uses the camera to scan QR codes",
         "NSPhotoLibraryUsageDescription": "This app uses the photo library to upload images"
       },
-      "config": {
-        "usesNonExemptEncryption": false
-      }
+      "buildNumber": "4"
     },
     "android": {
       "adaptiveIcon": {
@@ -58,7 +56,8 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.dudajivn.middo",
-      "googleServicesFile": "./google-services.json"
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 4
     },
     "extra": {
       "router": {
@@ -67,6 +66,12 @@
       "eas": {
         "projectId": "9c4fda59-5452-4290-ad1a-17b21b2548b0"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/9c4fda59-5452-4290-ad1a-17b21b2548b0"
     }
   }
 }

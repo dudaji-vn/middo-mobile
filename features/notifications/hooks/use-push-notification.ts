@@ -87,24 +87,24 @@ export const usePushNotifications = (): PushNotificationState => {
     });
 
     notificationListener.current = Notifications.addNotificationReceivedListener((notification) => {
-      // const url = notification.request.content.data?.url;
-      // if (url.includes(currentRoomId)) {
-      //   Notifications.setNotificationHandler({
-      //     handleNotification: async () => ({
-      //       shouldPlaySound: false,
-      //       shouldShowAlert: false,
-      //       shouldSetBadge: false,
-      //     }),
-      //   });
-      // } else {
-      //   Notifications.setNotificationHandler({
-      //     handleNotification: async () => ({
-      //       shouldPlaySound: true,
-      //       shouldShowAlert: true,
-      //       shouldSetBadge: true,
-      //     }),
-      //   });
-      // }
+      const url = notification.request.content.data?.url;
+      if (url.includes(currentRoomId)) {
+        Notifications.setNotificationHandler({
+          handleNotification: async () => ({
+            shouldPlaySound: false,
+            shouldShowAlert: false,
+            shouldSetBadge: false,
+          }),
+        });
+      } else {
+        Notifications.setNotificationHandler({
+          handleNotification: async () => ({
+            shouldPlaySound: true,
+            shouldShowAlert: true,
+            shouldSetBadge: true,
+          }),
+        });
+      }
     });
 
     responseListener.current = Notifications.addNotificationResponseReceivedListener((response) => {

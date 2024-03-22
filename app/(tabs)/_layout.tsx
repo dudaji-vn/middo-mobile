@@ -16,38 +16,39 @@ function TabBarIcon(props: {
 }
 
 export default function TabLayout() {
-  return <Redirect href="/webview" />;
-  // return (
-  //   <Tabs
-  //     screenOptions={{
-  //       headerShown: false,
-  //       tabBarStyle: {
-  //         backgroundColor: colorScheme === 'light' ? 'white' : 'black',
-  //       },
-  //     }}>
-  //     <Tabs.Screen
-  //       name="index"
-  //       options={{
-  //         title: 'Home',
-  //         tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
-  //       }}
-  //     />
-  //     <Tabs.Screen
-  //       name="conversations"
-  //       options={{
-  //         title: 'Conversation',
-  //         tabBarIcon: ({ color }) => <TabBarIcon name="globe" color={color} />,
-  //       }}
-  //     />
-  //     <Tabs.Screen
-  //       name="settings"
-  //       options={{
-  //         title: 'Me',
-  //         tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
-  //       }}
-  //     />
-  //   </Tabs>
-  // );
+  const colorScheme = useColorScheme();
+  if (VERSION === '1.0.0') return <Redirect href="/webview" />;
+  return (
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: {
+          backgroundColor: colorScheme === 'light' ? 'white' : 'black',
+        },
+      }}>
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: 'Home',
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="conversations"
+        options={{
+          title: 'Conversation',
+          tabBarIcon: ({ color }) => <TabBarIcon name="globe" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: 'Me',
+          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
+        }}
+      />
+    </Tabs>
+  );
 }
 
 const styles = StyleSheet.create({

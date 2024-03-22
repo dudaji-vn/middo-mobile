@@ -5,14 +5,33 @@
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "autoIncrement": true
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "autoIncrement": true
     },
-    "production": {}
+    "production": {
+      "env": {
+        "EXPO_PUBLIC_MIDDO_WEB_URL": "https://middo.app",
+        "EXPO_PUBLIC_API_URL": "https://middo-backend.onrender.com",
+        "EXPO_PUBLIC_VERSION": "1.0.0"
+      },
+      "autoIncrement": true
+    }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "./mobile-service-account.json",
+        "track": "internal"
+      },
+      "ios": {
+        "appleId": "dudaji.vn@gmail.com",
+        "ascAppId": "6479731975",
+        "appleTeamId": "Z52QH9UXD8"
+      }
+    }
   }
 }
