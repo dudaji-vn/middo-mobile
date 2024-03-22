@@ -10,6 +10,10 @@ npm-debug.*
 *.orig.*
 web-build/
 # expo router
+mobile-service-account.json
+
+google-services.json
+
 expo-env.d.ts
 
 
@@ -25,3 +29,7 @@ android
 
 # Env
 .env
+
+
+
+# 

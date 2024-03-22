@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import WebView from 'react-native-webview';
 
-import { SPK_NOTIFY, SPK_PLATFORM } from '~/configs/search-params.configs';
+import { SPK_NOTIFY, SPK_PLATFORM } from '~/configs/search-params.config';
 import { useNotificationStore } from '~/features/auth/stores';
 
 export const useWebviewNotificationNavigation = (webviewRef: React.RefObject<WebView>) => {

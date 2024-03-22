@@ -80,13 +80,6 @@ export const usePushNotifications = (): PushNotificationState => {
   };
 
   useEffect(() => {
-    if (!isLogged) {
-      if (notificationListener.current && responseListener.current) {
-        Notifications.removeNotificationSubscription(notificationListener.current!);
-        Notifications.removeNotificationSubscription(responseListener.current!);
-      }
-      return;
-    }
     registerForPushNotificationsAsync().then(async (token) => {
       setExpoPushToken(token);
       await handleSubscription(token?.data);
